@@ -1,0 +1,10 @@
+version: '2'
+services:
+  wikijs:
+    image: 'requarks/wiki:latest'
+    ports:
+      - '82:80'
+    environment:
+      WIKI_ADMIN_EMAIL: alex.smith@luricidex.com
+    volumes:
+      - ./volumes/config.yml:/var/wiki/config.yml
