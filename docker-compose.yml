@@ -1,10 +1,13 @@
-version: '2'
+version: "3"
 services:
-  wikijs:
-    image: 'requarks/wiki:latest'
-    ports:
-      - '82:80'
+  wiki:
+    image: requarks/wiki:beta
     environment:
-      WIKI_ADMIN_EMAIL: alex.smith@luricidex.com
-    volumes:
-      - ./volumes/config.yml:/var/wiki/config.yml
+      DB_TYPE: postgres
+      DB_HOST: web.jank
+      DB_PORT: 5432
+      DB_USER: luricidex
+      DB_PASS: hellotoday
+      DB_NAME: wiki
+    ports:
+      - "82:3000" # <-- here you can replace with "80:3000" to listen on port 80 instead, as an example

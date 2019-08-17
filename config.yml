@@ -21,7 +21,7 @@ port: 80
 # - sqlite = SQLite 3.9 or later
 
 db:
-  type: postgres
+  type: mssql
   # PostgreSQL / MySQL / MariaDB / MS SQL Server only:
   host: web.jank
   port: 5432
